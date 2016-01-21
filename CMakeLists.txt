@@ -18,3 +18,6 @@ target_link_libraries(glDrawElements ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES})
 
 add_executable(texture "Texture/main")
 target_link_libraries(texture ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES} ${LIBPNG_LIBRARIES})
+
+add_executable(transform "Transform/main")
+target_link_libraries(transform ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES} ${LIBPNG_LIBRARIES})
