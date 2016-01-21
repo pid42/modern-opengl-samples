@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
     glAttachShader(program, vs_shader);
     glAttachShader(program, fs_shader);
     glLinkProgram(program);
-    GLint linkStatus;
+    GLint linkStatus = 0;
     glGetProgramiv(program, GL_LINK_STATUS, &linkStatus );
     if ( linkStatus != GL_TRUE )
     {

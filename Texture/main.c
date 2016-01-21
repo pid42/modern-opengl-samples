@@ -178,7 +178,7 @@ int main(int argc, char *argv[])
     glAttachShader(program, vs_shader);
     glAttachShader(program, fs_shader);
     glLinkProgram(program);
-    GLint linkStatus;
+    GLint linkStatus = 0;
     glGetProgramiv(program, GL_LINK_STATUS, &linkStatus );
     if ( linkStatus != GL_TRUE )
     {
@@ -239,6 +239,7 @@ int main(int argc, char *argv[])
     glGenTextures(1, &tex);
     glBindTexture(GL_TEXTURE_2D, tex);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+    free(image_data);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glGenerateMipmap(GL_TEXTURE_2D);
